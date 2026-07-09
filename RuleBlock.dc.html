@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="margin-bottom:30px">
+  <h3 style="font-family:'Newsreader',serif;font-size:20px;font-weight:600;color:var(--ink,#242220);margin:0 0 12px 0;letter-spacing:0.01em">{{ heading }}</h3>
+  <sc-for list="{{ rows }}" as="row" hint-placeholder-count="3">
+    <div style="display:flex;gap:14px;padding:11px 0;border-bottom:1px solid #E7E1D6;align-items:flex-start">
+      <div style="flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid {{ row.tone }};color:{{ row.tone }};display:flex;align-items:center;justify-content:center;font-size:12px;font-family:'Manrope',sans-serif;font-weight:700;margin-top:1px">{{ row.icon }}</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:15.5px;line-height:1.55;color:#39352F">{{ row.text }}</div>
+    </div>
+  </sc-for>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:600,&quot;height&quot;:260},&quot;heading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Section heading&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;rows&quot;:{&quot;editor&quot;:null,&quot;default&quot;:[{&quot;type&quot;:&quot;do&quot;,&quot;text&quot;:&quot;Example allowed item&quot;},{&quot;type&quot;:&quot;dont&quot;,&quot;text&quot;:&quot;Example prohibited item&quot;}],&quot;tsType&quot;:&quot;{type:'do'|'dont'|'info',text:string}[]&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4A7A5E&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent || '#4A7A5E';
+    const dontColor = '#B24A3C';
+    const infoColor = '#9C948A';
+    const rows = (this.props.rows || []).map(r => ({
+      text: r.text,
+      icon: r.type === 'do' ? '✓' : (r.type === 'dont' ? '✕' : '–'),
+      tone: r.type === 'do' ? accent : (r.type === 'dont' ? dontColor : infoColor)
+    }));
+    return { heading: this.props.heading || '', rows };
+  }
+}
+
+</script>
+</body>
+</html>
