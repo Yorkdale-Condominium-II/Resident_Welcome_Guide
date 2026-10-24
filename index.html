@@ -395,39 +395,7 @@
     }
   
 
-    .front-matter-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      gap: 2rem;
-      align-items: start;
-    }
-    .president-photo-frame {
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-      overflow: hidden;
-      background: var(--soft);
-      box-shadow: var(--shadow);
-      min-height: 360px;
-    }
-    .president-photo-frame img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .photo-fallback {
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      text-align: center;
-      color: var(--accent-dark);
-      background: linear-gradient(145deg, #e3ecf1, #f7f9fa);
-    }
-    .photo-fallback strong { font-size: 3rem; letter-spacing: .08em; }
-    .photo-fallback span { margin-top: .65rem; font-weight: 700; }
+    .front-matter-grid { display: block; }
     .signature-block { margin-top: 1.4rem; }
     .signature-block p { margin: .15rem 0; }
     .board-grid {
@@ -460,17 +428,11 @@
     .board-role { color: var(--accent-dark); font-weight: 700; }
 
     @media (max-width: 760px) {
-      .front-matter-grid { grid-template-columns: 1fr; }
-      .president-photo-frame { max-width: 320px; }
       .board-grid { grid-template-columns: 1fr; }
     }
 
-.photo-fallback[hidden] { display: none !important; }
 </style><style>
 @media print {
-  .front-matter-grid { grid-template-columns: 1fr 2.15in; gap: .55in; }
-  .president-photo-frame { min-height: 3.25in; box-shadow: none; }
-  .president-photo-frame img, .photo-fallback { height: 3.25in; min-height: 3.25in; }
   .board-grid { grid-template-columns: repeat(3, 1fr); gap: .35in; }
   .board-member { box-shadow: none; }
 }
@@ -544,17 +506,6 @@
 <p>Toronto Standard Condominium Corporation No. 2937</p>
 </div>
 </div>
-<figure>
-<div class="president-photo-frame">
-<img alt="Dylan Stephens, President of the TSCC 2937 Board of Directors" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" src="president-dylan-stephens.png"/>
-<div class="photo-fallback" hidden="">
-<strong>DS</strong>
-<span>Dylan Stephens</span>
-<small>President, Board of Directors</small>
-</div>
-</div>
-<figcaption>Dylan Stephens, President</figcaption>
-</figure>
 </div>
 </section><section aria-labelledby="welcome-title" class="guide-section" id="welcome">
 <span class="section-number">03</span>
