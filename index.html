@@ -294,6 +294,18 @@
     .qr-task { font-weight: 700; }
     .qr-where { font-size: 0.82rem; color: var(--subtle); }
 
+    .print-only { display: none; }
+    .pt-list { list-style: none; margin: 1rem 0 0; padding: 0; }
+    .pt-group { margin: 1.1rem 0 .3rem; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-dark); }
+    .pt-row { display: flex; align-items: baseline; gap: .5rem; padding: .22rem 0; color: inherit; text-decoration: none; }
+    .pt-num { width: 2rem; flex: none; font-family: Georgia, serif; font-weight: 700; color: var(--accent); }
+    .pt-dots { flex: 1; min-width: 1rem; border-bottom: 1.5px dotted #8f887d; transform: translateY(-.28em); }
+    .pt-page { min-width: 2rem; text-align: right; font-weight: 700; }
+    .pt-top .pt-title { font-weight: 700; }
+    .pt-sub { font-size: .9em; color: var(--muted); }
+    .pt-sub .pt-num { visibility: hidden; }
+    .pt-sub .pt-title { padding-left: .8rem; }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -399,6 +411,7 @@
       html { scroll-behavior: auto; }
       body { background: #fff; font-size: 10.2pt; line-height: 1.42; }
       .screen-only, .screen-toolbar, .toc, .skip-link { display: none !important; }
+      .print-only { display: block !important; }
       .hero {
         page: cover;
         min-height: 11in;
@@ -470,6 +483,16 @@
   .board-grid { grid-template-columns: repeat(3, 1fr); gap: .35in; }
   .board-member { box-shadow: none; }
   .print-break { break-before: page; margin-top: 0; }
+  #maintenance h3 { margin: .5rem 0 .25rem; }
+  #maintenance .rule { padding: .3rem .55rem; }
+  #maintenance .rule-list { gap: .25rem; margin: .35rem 0 .5rem; }
+  #maintenance .notice { margin: .4rem 0; padding: .4rem .6rem; }
+  #maintenance .lede { margin-bottom: .35rem; }
+  #maintenance .source-note { margin-top: .3rem; }
+  .pt-list { margin: .3rem 0 0; font-size: 10pt; }
+  .pt-group { margin: .6rem 0 .1rem; font-size: 8.5pt; }
+  .pt-row { padding: .05rem 0; }
+  .print-toc .lede { margin-bottom: .2rem; }
   #quick-reference .qr-item { padding: .4rem .65rem; }
   #quick-reference .qr-grid { gap: .35rem; margin-top: .4rem; }
   #quick-reference .card, #contacts .card { padding: .5rem .7rem; }
@@ -532,7 +555,51 @@
 <li><a href="#sources"><span class="toc-num">16</span><span>Sources &amp; Document Control</span></a></li>
 </ol>
 </nav>
-<main id="main-content" tabindex="-1"><section aria-labelledby="quick-reference-title" class="guide-section quick-reference" id="quick-reference">
+<main id="main-content" tabindex="-1"><section aria-labelledby="print-toc-title" class="guide-section print-only print-toc" id="print-toc">
+<h2 class="section-title" id="print-toc-title">Table of Contents</h2>
+<p class="lede">Page numbers refer to this printed guide.</p>
+<ol class="pt-list">
+<li><a class="pt-row pt-top" href="#quick-reference"><span class="pt-num"></span><span class="pt-title">Quick Reference</span><span class="pt-dots"></span><span class="pt-page">3</span></a></li>
+<li class="pt-group">Getting Started</li>
+<li><a class="pt-row " href="#board-members"><span class="pt-num">01</span><span class="pt-title">Condo Board Members</span><span class="pt-dots"></span><span class="pt-page">4</span></a></li>
+<li><a class="pt-row " href="#presidents-welcome"><span class="pt-num">02</span><span class="pt-title">President's Welcome</span><span class="pt-dots"></span><span class="pt-page">5</span></a></li>
+<li><a class="pt-row " href="#welcome"><span class="pt-num">03</span><span class="pt-title">Welcome</span><span class="pt-dots"></span><span class="pt-page">6</span></a></li>
+<li><a class="pt-row " href="#registration"><span class="pt-num">04</span><span class="pt-title">Registration &amp; Moving</span><span class="pt-dots"></span><span class="pt-page">7</span></a></li>
+<li><a class="pt-row pt-sub" href="#registration"><span class="pt-num"></span><span class="pt-title">Tenant &amp; Resident Registration</span><span class="pt-dots"></span><span class="pt-page">7</span></a></li>
+<li><a class="pt-row pt-sub" href="#registration"><span class="pt-num"></span><span class="pt-title">Service Elevator Booking</span><span class="pt-dots"></span><span class="pt-page">7</span></a></li>
+<li><a class="pt-row pt-sub" href="#registration"><span class="pt-num"></span><span class="pt-title">Parcel Acceptance</span><span class="pt-dots"></span><span class="pt-page">7</span></a></li>
+<li class="pt-group">Safety &amp; Security</li>
+<li><a class="pt-row " href="#contacts"><span class="pt-num">05</span><span class="pt-title">Contacts &amp; Emergencies</span><span class="pt-dots"></span><span class="pt-page">8</span></a></li>
+<li><a class="pt-row " href="#security"><span class="pt-num">06</span><span class="pt-title">Building Security &amp; Visitor Access</span><span class="pt-dots"></span><span class="pt-page">9</span></a></li>
+<li><a class="pt-row " href="#complaints"><span class="pt-num">07</span><span class="pt-title">Reporting a Concern</span><span class="pt-dots"></span><span class="pt-page">10</span></a></li>
+<li class="pt-group">Daily Living</li>
+<li><a class="pt-row " href="#waste"><span class="pt-num">08</span><span class="pt-title">Waste Disposal</span><span class="pt-dots"></span><span class="pt-page">11</span></a></li>
+<li><a class="pt-row " href="#noise"><span class="pt-num">09</span><span class="pt-title">Noise &amp; Quiet Enjoyment</span><span class="pt-dots"></span><span class="pt-page">12</span></a></li>
+<li><a class="pt-row " href="#pets"><span class="pt-num">10</span><span class="pt-title">Pets</span><span class="pt-dots"></span><span class="pt-page">13</span></a></li>
+<li><a class="pt-row " href="#amenities"><span class="pt-num">11</span><span class="pt-title">Amenities</span><span class="pt-dots"></span><span class="pt-page">14</span></a></li>
+<li><a class="pt-row " href="#parking"><span class="pt-num">12</span><span class="pt-title">Parking &amp; Vehicles</span><span class="pt-dots"></span><span class="pt-page">15</span></a></li>
+<li><a class="pt-row pt-sub" href="#parking"><span class="pt-num"></span><span class="pt-title">Resident Parking</span><span class="pt-dots"></span><span class="pt-page">15</span></a></li>
+<li><a class="pt-row pt-sub" href="#parking"><span class="pt-num"></span><span class="pt-title">Visitor Parking</span><span class="pt-dots"></span><span class="pt-page">15</span></a></li>
+<li class="pt-group">Your Unit &amp; Building Rules</li>
+<li><a class="pt-row " href="#general"><span class="pt-num">13</span><span class="pt-title">General Rules</span><span class="pt-dots"></span><span class="pt-page">16</span></a></li>
+<li><a class="pt-row pt-sub" href="#general"><span class="pt-num"></span><span class="pt-title">Common Elements &amp; Safety</span><span class="pt-dots"></span><span class="pt-page">16</span></a></li>
+<li><a class="pt-row pt-sub" href="#general"><span class="pt-num"></span><span class="pt-title">Water &amp; Plumbing</span><span class="pt-dots"></span><span class="pt-page">16</span></a></li>
+<li><a class="pt-row pt-sub" href="#general"><span class="pt-num"></span><span class="pt-title">Balconies, Patios &amp; Terraces</span><span class="pt-dots"></span><span class="pt-page">16</span></a></li>
+<li><a class="pt-row " href="#switches"><span class="pt-num">14</span><span class="pt-title">Switches &amp; Outlets</span><span class="pt-dots"></span><span class="pt-page">17</span></a></li>
+<li><a class="pt-row " href="#maintenance"><span class="pt-num">15</span><span class="pt-title">Unit Routine Maintenance</span><span class="pt-dots"></span><span class="pt-page">18</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Dryer Lint Filter</span><span class="pt-dots"></span><span class="pt-page">18</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Drains, Sinks &amp; Toilets</span><span class="pt-dots"></span><span class="pt-page">18</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Extended Absences</span><span class="pt-dots"></span><span class="pt-page">18</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Doors &amp; Windows</span><span class="pt-dots"></span><span class="pt-page">18</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Water Damage Prevention</span><span class="pt-dots"></span><span class="pt-page">19</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Fire &amp; Life Safety</span><span class="pt-dots"></span><span class="pt-page">19</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Air &amp; Moisture</span><span class="pt-dots"></span><span class="pt-page">19</span></a></li>
+<li><a class="pt-row pt-sub" href="#maintenance"><span class="pt-num"></span><span class="pt-title">Seasonal &amp; Insurance</span><span class="pt-dots"></span><span class="pt-page">19</span></a></li>
+<li class="pt-group">Reference</li>
+<li><a class="pt-row " href="#sources"><span class="pt-num">16</span><span class="pt-title">Sources &amp; Document Control</span><span class="pt-dots"></span><span class="pt-page">20</span></a></li>
+</ol>
+</section>
+<section aria-labelledby="quick-reference-title" class="guide-section quick-reference" id="quick-reference">
 <h2 class="section-title" id="quick-reference-title">Quick Reference</h2>
 <p class="lede">Find what you need fast. In an emergency, follow the steps below first.</p>
 <div class="notice fire">
@@ -912,10 +979,11 @@
 <div class="notice">
 <strong>Slow drain or backup:</strong> report it to concierge or property management early. A developing blockage is far less costly to clear than an overflow that reaches neighbouring or lower units.
       </div>
-<h3 class="print-break">Extended Absences</h3>
+<h3>Extended Absences</h3>
 <ul class="rule-list">
 <li class="rule allowed"><span class="rule-label">Water</span><span>Before leaving for an extended period, such as a vacation, close your unit's water shut-off valves.</span></li>
 <li class="rule allowed"><span class="rule-label">Electricity</span><span>Unplug non-essential appliances and equipment before you leave.</span></li>
+<li class="rule allowed"><span class="rule-label">Emergency contact</span><span>For a long absence, give management an emergency contact or key holder so staff can respond quickly to a leak or other emergency.</span></li>
 </ul>
 <div class="notice">
 <strong>Why it matters:</strong> Shutting off the water reduces the likelihood of prolonged or severe water damage to your unit and to neighbouring units, and unplugging idle equipment limits unnecessary energy consumption.
@@ -928,7 +996,31 @@
 <div class="notice warning">
 <strong>Freeze risk:</strong> Open or ajar doors and windows in winter allow cold air in, which can build condensation and freeze building systems and pipes. Frozen pipes can burst and cause extensive damage and insurance claims affecting your unit and neighbouring units.
       </div>
-<p class="source-note">Sources: Schedule XII Rules on water, drains, and waste; Declaration provisions on owner responsibility and chargebacks; general fire-prevention, appliance-safety, water-damage prevention, and winter freeze-protection practice.</p>
+<h3>Water Damage Prevention</h3>
+<ul class="rule-list">
+<li class="rule allowed"><span class="rule-label">Hoses</span><span>Inspect washing machine, dishwasher, sink, and toilet supply hoses for bulges, cracks, or leaks. Replace worn hoses promptly.</span></li>
+<li class="rule allowed"><span class="rule-label">Seals</span><span>Check the caulking around tubs, showers, and sinks each year. Reseal where it is cracked or missing.</span></li>
+<li class="rule allowed"><span class="rule-label">Leak sensors</span><span>Consider battery-powered leak detectors under sinks and near the washer and dishwasher.</span></li>
+<li class="rule allowed"><span class="rule-label">Appliances</span><span>Do not run the washer or dishwasher while you are away or asleep.</span></li>
+<li class="rule allowed"><span class="rule-label">Toilets</span><span>Repair a running or leaking toilet promptly.</span></li>
+</ul>
+<h3>Fire &amp; Life Safety</h3>
+<ul class="rule-list">
+<li class="rule allowed"><span class="rule-label">Alarms</span><span>Test smoke and carbon monoxide alarms monthly and replace batteries as needed. Never remove or cover an alarm.</span></li>
+<li class="rule allowed"><span class="rule-label">Range hood</span><span>Clean the grease filter regularly to reduce fire risk.</span></li>
+</ul>
+<h3>Air &amp; Moisture</h3>
+<ul class="rule-list">
+<li class="rule allowed"><span class="rule-label">Fans and filters</span><span>Clean bathroom exhaust fans and your heating and cooling unit filter each season. Keep vents unblocked.</span></li>
+<li class="rule allowed"><span class="rule-label">Condensation</span><span>Run the bathroom fan after showers and keep indoor humidity moderate in winter.</span></li>
+</ul>
+<h3>Seasonal &amp; Insurance</h3>
+<ul class="rule-list">
+<li class="rule allowed"><span class="rule-label">Balconies</span><span>Keep balcony drains and sliding door tracks clear so water drains and doors close fully.</span></li>
+<li class="rule allowed"><span class="rule-label">Pests</span><span>Report pests promptly, store food in sealed containers, and allow access for building treatments.</span></li>
+<li class="rule info"><span class="rule-label">Insurance</span><span>Confirm your own unit insurance coverage. The Corporation's insurance does not cover personal belongings.</span></li>
+</ul>
+<p class="source-note">Sources: Schedule XII Rules on water, drains, and waste; Declaration provisions on owner responsibility and chargebacks; general fire-prevention, appliance-safety, water-damage prevention, winter freeze-protection, and general unit-maintenance practice.</p>
 </section><section aria-labelledby="sources-title" class="guide-section" id="sources">
 <span class="section-number">16</span>
 <h2 class="section-title" id="sources-title">Sources &amp; Document Control</h2>
